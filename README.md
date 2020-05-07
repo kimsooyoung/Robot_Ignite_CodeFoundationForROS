@@ -4,7 +4,7 @@
 
 ![issue_badge](https://img.shields.io/badge/exam%20score-6.5-orange) 
 
-## Robot Ignite의 첫번째 코스 Code Foundation for ROS의 시험 솔루션입니다.
+## [Robot Ignite](https://www.theconstructsim.com/)의 첫번째 코스 Code Foundation for ROS의 시험 솔루션입니다.
 
 시험은 다음과 같은 환경에서 이루어집니다.  
 
@@ -67,7 +67,7 @@ To make the Turtlebot robot perform a big square movement:
 rosrun linux_exam big_square.py
 ```
 
-Inside the **linux_exam** folder, create a new bash script, named **task2.sh**, that does the following:
+Inside the `linux_exam` folder, create a new bash script, named `task2.sh`, that does the following:
 
 It receives one parameter, which can contain one of the following values:
 
@@ -113,14 +113,14 @@ Inside the linux_exam folder, create a new bash script, named task3.sh, that doe
 
 ## Task 0
 
-Inside your workspace `(~/catkin_ws/src/)`, create a new folder named **python_exam**. Inside this folder you will place all the files required for the exam. The full path has to be like this:
+Inside your workspace `(~/catkin_ws/src/)`, create a new folder named `python_exam`. Inside this folder you will place all the files required for the exam. The full path has to be like this:
 ``` bash
 /home/user/catkin_ws/src/python_exam
 ```
 
 ## Task 1
 
-Inside the **python_exam** folder, create a new Python script named **task1.py**. Inside this script, create a function named **get_highest_lowest**. This function does the following:
+Inside the `python_exam` folder, create a new Python script named `task1.py`. Inside this script, create a function named `get_highest_lowest`. This function does the following:
 
 * First, it creates an instance of the RobotControl class.
 * Second, it gets all the values of the laser readings and it stores them into a list.
@@ -128,7 +128,7 @@ Inside the **python_exam** folder, create a new Python script named **task1.py**
 * Finally, it returns the position in the list of the highest and lowest values (check Specifications).
 
 #### Specifications
-* The name of the function **MUST BE** the one specified above: **get_highest_lowest**
+* The name of the function **MUST BE** the one specified above: `get_highest_lowest`.
 * Bear in mind that the function doesn't have to return the values (highest and lowest), but the position in the list of those values.
 * Your final (after you have tested that it works properly) program **MUST** contain the get_highest_lowest function, but **MUST NOT** contain any call to this function.
 * The function has to return the position values in an specific order: first, it returns the position of the highest value and second, it returns the position of the lowest value.
@@ -150,21 +150,14 @@ Inside the python_exam folder, create a new Python script, named task2.py, that 
 * When the laser readings detect that there's an obstacle (the wall) at less than 1 meter in front of the robot, the robot will stop its movement.
 * After it stops, the robot will turn 90 degrees to his right, facing the opening corner in the room (check Specifications).
 
-#### Specifications
+### Task 3
 
-After turning 90 degrees, the robot MUST end in the orientation showed below (facing the opening corner):
+Inside the python_exam folder, create a new Python script, named task3.py. Inside this script, create a Python class named `ExamControl`.
 
-Fig. 1
-Example
-Expected behavior:
+The `ExamControl` class has to contain, at least, the following 2 methods:
 
-Task 3
-Inside the python_exam folder, create a new Python script, named task3.py. Inside this script, create a Python class named ExamControl.
-
-The ExamControl class has to contain, at least, the following 2 methods:
-
-get_laser_readings: This method, when called, returns the values of the laser readings of the right and left side of the robot (check Specifications).
-main: This method, when called, makes the Turtlebot robot start the behavior described below:
+* `get_laser_readings`: This method, when called, returns the values of the laser readings of the right and left side of the robot (check Specifications).
+* `main`: This method, when called, makes the Turtlebot robot start the behavior described below:
 Initially, the robot starts moving forward, towards the opening in the room.
 
 While moving forward, your program keeps checking the values of the laser readings at the right and left sides of the robot.
@@ -173,98 +166,9 @@ When these laser values indicate that there are no obstacles detected neither at
 
 Check the Example section for more details on the expected behavior.
 
-Specifications
-The names of the class and the methods MUST BE exactly the same as the ones specified above.
-Your final program (after you have tested that it works properly) MUST contain the ExamControl class, but MUST NOT contain any instance of the class.
-The initial position of the robot for this exercise it's the end position of the robot in the previous Exercise (check Fig. 1).
-The get_laser_readings method has to return the values in an specific order: first, it returns the value of the left side and second, it returns the value of the right side.
-We consider as laser readings from the left and right sides of the robot, the ones at the extremes of the laser values array. Remember the following image:
-
-
-Example
-Expected behavior:
-
-## Installation
-
-### Ubuntu
-
-```bash
-$> sudo apt install libpcl-dev
-$> cd ~
-$> git clone https://github.com/udacity/SFND_Lidar_Obstacle_Detection.git
-$> cd SFND_Lidar_Obstacle_Detection
-$> mkdir build && cd build
-$> cmake ..
-$> make
-$> ./environment
-```
-
-### Windows
-
-http://www.pointclouds.org/downloads/windows.html
-
-### MAC
-
-#### Install via Homebrew
-
-1. install [homebrew](https://brew.sh/)
-2. update homebrew
-   ```bash
-   $> brew update
-   ```
-3. add homebrew science [tap](https://docs.brew.sh/Taps)
-   ```bash
-   $> brew tap brewsci/science
-   ```
-4. view pcl install options
-   ```bash
-   $> brew options pcl
-   ```
-5. install PCL
-   ```bash
-   $> brew install pcl
-   ```
-
-#### Prebuilt Binaries via Universal Installer
-
-http://www.pointclouds.org/downloads/macosx.html  
-NOTE: very old version
-
-#### Build from Source
-
-[PCL Source Github](https://github.com/PointCloudLibrary/pcl)
-
-[PCL Mac Compilation Docs](http://www.pointclouds.org/documentation/tutorials/compiling_pcl_macosx.php)
-
-### This project contains
-
-- How to handle pcl library
-- Segmentaion (Separate ground points and obstacle points)
-- Clustering Obstacle points
-- Handle Real World Data
-- Stream Real World Data with Real-Time Clustering
-
-## Additional works for project submission
-
-> implement own Clustering/Segmentation algorithms, using RANSAC, KD-Tree, and Euclidean clustering that learned from previsous lessons.
-
-#### 1. Segmentation using RANSAC
-
-See `RANSAC3DSegment` function in `processPointClouds.h`
-
-```c++
-std::pair<typename pcl::PointCloud<PointT>::Ptr, typename pcl::PointCloud<PointT>::Ptr> RANSAC3DSegment(typename pcl::PointCloud<PointT>::Ptr cloud, int maxIterations, float distanceThreshold);
-
-```
-
-#### 2. Clustering using KD-Tree, and Euclidean Proximity
-
-See `EuclideanClustering`, `euclideanCluster`, `clusterHelper` function in `processPointClouds.h`
-
-```c++
-void clusterHelper(int pointIdx, const std::vector<std::vector<float>>& points, std::vector<int>& cluster, std::vector<bool>& processed, KdTree* tree, float distanceTol);
-
-std::vector<std::vector<int>> euclideanCluster(const std::vector<std::vector<float>>& points, KdTree* tree, float distanceTol);
-
-std::vector<typename pcl::PointCloud<PointT>::Ptr> EuclideanClustering(typename pcl::PointCloud<PointT>::Ptr cloud, float clusterTolerance, int minSize, int maxSize);
-```
+#### Specifications
+* The names of the class and the methods MUST BE exactly the same as the ones specified above.
+* Your final program (after you have tested that it works properly) MUST contain the ExamControl class, but MUST NOT contain any instance of the class.
+* The initial position of the robot for this exercise it's the end position of the robot in the previous Exercise
+* The get_laser_readings method has to return the values in an specific order: first, it returns the value of the left side and second, it returns the value of the right side.
+* We consider as laser readings from the left and right sides of the robot, the ones at the extremes of the laser values array. 
