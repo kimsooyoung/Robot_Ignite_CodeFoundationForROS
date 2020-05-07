@@ -110,7 +110,9 @@ Inside the linux_exam folder, create a new bash script, named task3.sh, that doe
 * exam3.py:
 
 > Owner: Write
+
 > Group: Read
+
 > All others: Execute
 
 ## Part 2: Python for Robotics
