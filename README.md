@@ -94,13 +94,17 @@ Inside the linux_exam folder, create a new bash script, named task3.sh, that doe
 * exam1.py:
 
 > Owner: Read, Write and Execute
+
 > Group: Read and Execute
+
 > All others: Read
 
 * exam2.py:
 
 > Owner: Read and Execute
+
 > Group: None
+
 > All others: Execute
 
 * exam3.py:
