@@ -4,10 +4,30 @@
 
 ![issue_badge](https://img.shields.io/badge/exam%20score-6.5-orange) 
 
-### Robot Ignite의 첫번째 코스 Code Foundation for ROS의 시험 솔루션입니다.
+## Robot Ignite의 첫번째 코스 Code Foundation for ROS의 시험 솔루션입니다.
+
+시험은 다음과 같은 환경에서 이루어집니다.  
+
+![python_exam_scene](https://user-images.githubusercontent.com/12381733/81247607-66d3d500-9055-11ea-8e4f-d6360c34122d.png)
 
 
-**Exam** This exam is based on a Turtlebot robot, which you already know pretty well since it has been used alongside the Courses.
+시험은 크게 두 파트로 나뉩니다.
+
+- Linux for Robotics
+- Python for Robotics
+
+## Part 1: Linux for Robotics
+
+### Task 0
+
+Inside your workspace (~/catkin_ws/src/), create a new folder named linux_exam. Inside this folder you will place all the files required for the exam. The full path has to be like this:
+
+``` bash
+/home/user/catkin_ws/src/linux_exam
+```
+
+## Part 2: Python for Robotics
+
 
 ## Installation
 
